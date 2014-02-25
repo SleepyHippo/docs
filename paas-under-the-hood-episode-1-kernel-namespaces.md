@@ -152,7 +152,7 @@ When the last process within a namespace exits, the associated resources (IPC, n
 
 当一个namespace中最后一个进程退出之后，相关的资源（IPC，网络接口等等……）会自动被回收。如果因为某些原因，你不希望在这时回收资源的话，是有一个方法。namespace中的每个进程都有一个/proc/$PID/ns目录，里面的每个文件对应一个namespace类型。用mount --bind来挂载其中的某个文件，这样，对应的namespace就可以被保留，即使其中的所有进程都退出了。
 
-######**译者注：这里译者根据http://lwn.net/Articles/531381/，对原文的意思稍加扩充。
+######**译者注：这里译者根据http://lwn.net/Articles/531381/ ，对原文的意思稍加扩充。
 
 Each namespace? Not quite. Up to (and including) kernel 3.4, only ipc, net, and uts namespaces appear here; mnt and pid namespaces do not. This can be a problem in some specific cases, as we will see in the next paragraph.
 
